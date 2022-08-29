@@ -203,3 +203,8 @@ input{
     top: 150px;
     color: lightblue;
 }
+.link{
+    color: inherit;
+    text-decoration: none;
+
+}
