@@ -1,4 +1,5 @@
 import React from 'react'
+import posts from "./Data"
 
 const Post = () => {
     const post = posts[2];
