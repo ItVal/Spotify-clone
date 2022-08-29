@@ -33,3 +33,43 @@
     border-radius: 50%;
     object-fit: cover;
 }
+
+
+.home{
+    display: flex ;
+    padding: 50px 100px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 30%;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 5px 20px 0px rgba(0,0,0,1);
+-webkit-box-shadow: 1px 5px 20px 0px rgba(0,0,0,1);
+-moz-box-shadow: 1px 5px 20px 0px rgba(0,0,0,1);
+}
+.img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin: 20px 0px;
+}
+
+.desc{
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 25px;
+
+}
+.cardButton{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(166, 240, 240);
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
