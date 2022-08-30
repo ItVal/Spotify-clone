@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import '../assets/style.css'
 import Imgprofil from '../assets/Val.jpeg'
+import logo from '../assets/logo.png'
 
 const Navbar = ({user}) => {
   return (
     <div className="navbar">
-      <span className="logo"><Link className="link" to="/">Yabiso Ndule</Link></span>
+      <span ><Link className="link" to="/"><img src={ logo } alt="" className="logo" /></Link></span>
       {user ? (
         <ul className="list">
         <li className="listItem">

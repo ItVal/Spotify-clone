@@ -11,9 +11,10 @@
   }
 
 .logo{
-    font-size: 20px;
-    font-weight: bold;
+    width: 150px;
 }
+
+
 .list{
     display: flex;
     align-items: center;
