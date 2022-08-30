@@ -1,4 +1,7 @@
 
+body{
+    background-color: #333;
+}
 .navbar{
     height: 50px;
     
@@ -115,6 +118,7 @@ justify-content: center;
 align-items: center;
 border-radius: 20px;
 
+
 }
 
 .left, .right{
@@ -154,8 +158,8 @@ border-radius: 20px;
     z-index: -1;
 
 }
-.loginButton{
-    width: 150px;
+.loginButton1{
+    width: 300px;
     padding: 15px 25px;
     border-radius: 5px;
     color: white;
@@ -165,13 +169,23 @@ border-radius: 20px;
     margin-bottom: 20px;
     justify-content: center;
     height: 20px;
+}
+
+.loginButton{
+    width: 150px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    display: none;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    justify-content: center;
+    height: 20px;
  
 }
 
 
-.google{
-    background-color: red;
-}
 .facebook{
     background-color: blue;
 }

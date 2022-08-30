@@ -1,18 +1,56 @@
-import React from 'react'
-import { ImGoogle3 } from 'react-icons/im';
+import React, {useEffect} from 'react'
+import '../assets/style.css'
+
+import { GoogleLogin } from 'react-google-login';
+import { gapi } from 'gapi-script';
+
+// import { ImGoogle3 } from 'react-icons/im';
 import { SiFacebook } from 'react-icons/si'; 
 import { BsGithub } from 'react-icons/bs';
 
+
+
 const Login = () => {
+    // login manage
+
+const clientId = '449313310500-bpambnvbicerdqltq67i5ostkun77420.apps.googleusercontent.com';
+
+useEffect(() => {
+   const initClient = () => {
+         gapi.client.init({
+         clientId: clientId,
+         scope: ''
+       });
+    };
+    gapi.load('client:auth2', initClient);
+});
+
+const onSuccess = (res) => {
+    console.log('success:', res);
+};
+
+const onFailure = (err) => {
+    console.log('failed:', err);
+};
   return (
     <div className='login'>
         <h1 className='loginTitle'> Choose a Login Method</h1>
         <div className="wrapper">
             <div className="left">
-                <div className="loginButton google">
-                 <h3 className='icon'> <ImGoogle3 /> </h3>
-                 <span>Google</span>
+                <div className="loginButton1 google">
+
+                <GoogleLogin
+          clientId={clientId}
+          buttonText="Sign in with Google"
+          onSuccess={onSuccess}
+          onFailure={onFailure}
+          cookiePolicy={'single_host_origin'}
+          isSignedIn={true}
+          
+      />
+  
                 </div>
+
                 <div className="loginButton facebook">
                 <h3 className='icon'> <SiFacebook /> </h3>
                 <span>Facebook</span>

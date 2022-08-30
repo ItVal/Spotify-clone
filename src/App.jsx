@@ -4,8 +4,6 @@ import Home from './Pages/Home'
 import Post from './Pages/Post'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-
-
 function App() {
  const user = false;
   return (
@@ -22,5 +20,6 @@ function App() {
     </BrowserRouter>
   )
 }
+
 
 export default App
