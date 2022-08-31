@@ -1,20 +1,30 @@
 import React from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 
 function Footer() {
-  return <Container></Container>;
+  return ( 
+  <div className="footer">
+  <div className="footer__left">
+    <img
+      className="footer__albumLogo"
+      src=''
+      alt=''
+    />
+    
+      <div className="footer__songInfo">
+        <h4>album</h4>
+        <p>artiste</p>
+      </div>
+    
+      <div className="footer__songInfo">
+        <h4>No song is playing</h4>
+        <p>...</p>
+      </div>
+  </div>
+</div>
+);
 }
 
-const Container = styled.div`
-  height: 100%;
-  width: 100%;
-  background-color: #181818;
-  border-top: 1px solid #282828;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  align-items: center;
-  justify-content: center;
-  padding: 0 1rem;
-`;
+
 
 export default Footer;
