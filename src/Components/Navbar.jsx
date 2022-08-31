@@ -5,10 +5,20 @@ import Imgprofil from '../assets/Val.jpeg'
 import logo from '../assets/logo.png'
 
 const Navbar = () => {
-  return (
-    <div>
-     nav bar 
-        </div>
+  return  (
+    <div className="header">
+      <div className="header__left">
+      <span> logo </span>
+        <input
+          placeholder="Search for Artists, Songs, or Podcasts "
+          type="text"
+        />
+      </div>
+      <div className="header__right">
+        <span> img </span>
+        <h4>Nom</h4>
+      </div>
+    </div>
   );
 };
 
