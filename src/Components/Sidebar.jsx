@@ -1,5 +1,7 @@
 import React from "react";
-import '../App.css'
+import '../Pages/Body.css'
+import logo from '../assets/mylogo.png'
+
 // import styled from "styled-components";
 // import { MdHomeFilled, MdSearch } from "react-icons/md";
 // import { IoLibrary } from "react-icons/io5";
@@ -7,10 +9,10 @@ import '../App.css'
 
 function Sidebar() {
   return (
-    <div className="sidebar">
+    <div className="side_bar">
       <img
         className="sidebar__logo"
-        src=""
+        src={logo}
         alt=""
       />
       <div>

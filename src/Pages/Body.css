@@ -1,0 +1,166 @@
+
+.login{
+    background-color: blueviolet;
+}
+
+
+
+.body {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100vh;
+    }
+.mybodi{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+  
+.one{
+    display: grid;
+    grid-template-rows: 0.5fr 4fr 0.5fr;
+    background-color: #1db954;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(148, 181, 211);
+
+}
+.search-zone{
+    height: 30px;
+    margin-left: 20px;
+    border: solid;
+    border-radius: 50px;
+}
+/* login */
+.login {
+    display: grid;
+    background-color: rgb(39, 33, 33);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+  }
+  
+  .login > img {
+    height: 300px;
+  }
+  
+  .login > button {
+    color: white;
+    width: 200px;
+    height: 50px;
+    border-radius: 99px;
+    font-weight: 800;
+    background-color: #1db954;
+    border: solid;
+    box-sizing: border-box;
+  }
+
+
+
+/* side bar */
+ .sidebar{
+    display: flex;
+    flex-direction: column;
+    flex: 0.2;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: auto;
+    color: white;
+    background-color: #742828;
+  }
+  
+  /*
+  .sidebar__title {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 12px;
+  }
+  
+
+  } */
+
+  .sidebar__logo {
+    margin-right: 30px;
+    object-fit: contain;
+    width: 170px;
+    padding: auto;
+   
+   
+}
+
+/* footer */
+.myfooter{
+    background-color: rgb(148, 181, 211);
+}
+.footer__right * .MuiSlider-root {
+    color: green;
+  }
+  .footer__left {
+    display: flex;
+    align-items: center;
+    color: white;
+    width: 300px;
+    flex: 0.3;
+  }
+/* }
+.footer {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    padding: 20px;
+    height: 65px;
+    width: 97%;
+    background-color: #282828;
+  }
+  
+ 
+  
+  .footer__green {
+    color: #1ed15e;
+  }
+  
+  .footer__center {
+    flex: 0.4;
+    max-width: 300px;
+    padding: 0 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .footer__icon:hover,
+  .footer__green:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.2) !important;
+  }
+  
+  .footer__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    flex: 0.3;
+  }
+  
+  .footer__albumLogo {
+    height: 60px;
+    width: 60px;
+    margin-right: 20px;
+    object-fit: contain;
+  }
+  
+  .footer__songInfo > h4 {
+    margin-bottom: 5px;
+  }
+  
+  .footer__songInfo > p {
+    font-size: 12px;
+  } */

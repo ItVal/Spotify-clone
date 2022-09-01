@@ -1,8 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import '../assets/style.css'
-import Imgprofil from '../assets/Val.jpeg'
-import logo from '../assets/logo.png'
 
 const Navbar = () => {
   return  (
