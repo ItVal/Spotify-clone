@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Body.css";
+import "../assets/Style.css";
 import axios from "axios";
 import Sidebar from "../Components/Sidebar";
 import Footer from "../Components/Footer";
@@ -57,14 +57,14 @@ const Body = () => {
       <div className="one">
         <div className="navbar">
           <div className="menu">Home</div>
-          <form onSubmit={searchArtists} className="">
+          <form onSubmit={searchArtists} className="reseach">
             <input
               className="search-zone"
               placeholder="Search for Artists, Songs, or Podcasts "
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
             />
-            <button type={"submit"}>Search</button>
+            <button className="btn-search" type={"submit"}>Search</button>
           </form>
           <div className="sigin">Login</div>
         </div>

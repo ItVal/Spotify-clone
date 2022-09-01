@@ -1,5 +1,5 @@
 import React from "react";
-import '../Pages/Body.css'
+import '../assets/Style.css'
 import logo from '../assets/mylogo.png'
 
 // import styled from "styled-components";

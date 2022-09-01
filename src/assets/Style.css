@@ -20,7 +20,8 @@
 .one{
     display: grid;
     grid-template-rows: 0.5fr 4fr 0.5fr;
-    background-color: #1db954;
+    background-color: white;
+    color: rgb(41, 94, 94);
 }
 .navbar{
     display: flex;
@@ -30,11 +31,19 @@
     background-color: rgb(148, 181, 211);
 
 }
+.reseach{
+  display: flex;
+  gap: 20px;
+}
 .search-zone{
     height: 30px;
     margin-left: 20px;
     border: solid;
     border-radius: 50px;
+}
+.btn-search{
+  border: solid;
+  border-radius: 10px;
 }
 /* login */
 .login {
@@ -72,18 +81,16 @@
     padding-right: 10px;
     height: auto;
     color: white;
-    background-color: #742828;
+    background-color: #282828;
   }
   
-  /*
+
   .sidebar__title {
     margin-left: 10px;
     padding: 5px;
     font-size: 12px;
   }
   
-
-  } */
 
   .sidebar__logo {
     margin-right: 30px;
@@ -97,6 +104,7 @@
 /* footer */
 .myfooter{
     background-color: rgb(148, 181, 211);
+   display: flex;
 }
 .footer__right * .MuiSlider-root {
     color: green;
@@ -108,7 +116,7 @@
     width: 300px;
     flex: 0.3;
   }
-/* }
+
 .footer {
     position: fixed;
     display: flex;
@@ -163,4 +171,4 @@
   
   .footer__songInfo > p {
     font-size: 12px;
-  } */
+  } 
