@@ -9,16 +9,15 @@ import { MdOutlineLibraryMusic } from "react-icons/md";
 function Sidebar() {
   return (
     <div className="side_bar">
-      
       <div className="home">
         <span className="sidebar__home"><AiOutlineHome /> </span> 
         <span>Home</span>
       </div>
-      <div>
+      <div className="search">
         <span className="sidebar__search" > <FaSearchPlus /> </span>
         <span>Search</span>
       </div>
-      <div>
+      <div className="library">
         <span className="sidebar__library" src="" alt=""> <MdOutlineLibraryMusic /> </span>
         <span>Your Library</span>
       </div>

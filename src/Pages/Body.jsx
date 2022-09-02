@@ -52,35 +52,40 @@ const Body = () => {
 
   return (
     <div className="body">
-     
-
-        <div className="navbar">
+      <div className="navbar">
         <img className="sidebar__logo" src={logo} alt="" />
+        <div className="navigation">
           <div className="menu">Home</div>
+          <div className="menu">Library</div>
+          <div className="menu3">Artists</div>
           <form onSubmit={searchArtists} className="reseach">
+                    
             <input
               className="search-zone"
               placeholder="Search for Artists, Songs, or Podcasts "
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
             />
-            <button className="btn-search" type={"submit"}>
-              <MdSavedSearch />
+            <button className="btn-search" >
+            Search
             </button>
           </form>
-          <div className="sigin">Login</div>
         </div>
-
-        <div className="main">
-          <div className="sidebar"> <Sidebar /></div>
-          <div className="mybodi">{renderArtists()}</div>
-        </div>
-
-        <div className="myfooter">
-          <Footer />
-        </div>
+        <div className="sigin">Login</div>
       </div>
-  
+
+      <div className="main">
+        <div className="sidebar">
+          {" "}
+          <Sidebar />
+        </div>
+        <div className="mybodi">{renderArtists()}</div>
+      </div>
+
+      <div className="myfooter">
+        <Footer />
+      </div>
+    </div>
   );
 };
 
