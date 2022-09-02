@@ -1,30 +1,25 @@
 import React from "react";
-import '../assets/Style.css'
-import logo from '../assets/mylogo.png'
+import "../assets/Style.css";
 
-// import styled from "styled-components";
-// import { MdHomeFilled, MdSearch } from "react-icons/md";
-// import { IoLibrary } from "react-icons/io5";
-// import logo from "./logo.png"
+import { AiOutlineHome } from "react-icons/ai";
+import { FaSearchPlus } from "react-icons/fa"; 
+import { MdOutlineLibraryMusic } from "react-icons/md";
+
 
 function Sidebar() {
   return (
     <div className="side_bar">
-      <img
-        className="sidebar__logo"
-        src={logo}
-        alt=""
-      />
-      <div>
-        <img className="sidebar__home" src="" alt="" />
+      
+      <div className="home">
+        <span className="sidebar__home"><AiOutlineHome /> </span> 
         <span>Home</span>
       </div>
       <div>
-        <img className="sidebar__search" src="" alt="" />
+        <span className="sidebar__search" > <FaSearchPlus /> </span>
         <span>Search</span>
       </div>
       <div>
-        <img className="sidebar__library" src="" alt="" />
+        <span className="sidebar__library" src="" alt=""> <MdOutlineLibraryMusic /> </span>
         <span>Your Library</span>
       </div>
       <br />

@@ -3,6 +3,8 @@ import "../assets/Style.css";
 import axios from "axios";
 import Sidebar from "../Components/Sidebar";
 import Footer from "../Components/Footer";
+import { MdSavedSearch } from "react-icons/md";
+import logo from "../assets/mylogo.png";
 
 const Body = () => {
   const [searchKey, setSearchKey] = useState("");
@@ -50,12 +52,10 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="sidebar">
-        <Sidebar />
-      </div>
+     
 
-      <div className="one">
         <div className="navbar">
+        <img className="sidebar__logo" src={logo} alt="" />
           <div className="menu">Home</div>
           <form onSubmit={searchArtists} className="reseach">
             <input
@@ -64,16 +64,23 @@ const Body = () => {
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
             />
-            <button className="btn-search" type={"submit"}>Search</button>
+            <button className="btn-search" type={"submit"}>
+              <MdSavedSearch />
+            </button>
           </form>
           <div className="sigin">Login</div>
         </div>
-        <div className="mybodi">{renderArtists()}</div>
+
+        <div className="main">
+          <div className="sidebar"> <Sidebar /></div>
+          <div className="mybodi">{renderArtists()}</div>
+        </div>
+
         <div className="myfooter">
           <Footer />
         </div>
       </div>
-    </div>
+  
   );
 };
 
