@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "../assets/Style.css";
-import "../App.css"
+import "../App.css";
 import axios from "axios";
 import Sidebar from "../Components/Sidebar";
 import Footer from "../Components/Footer";
-import { MdSavedSearch } from "react-icons/md";
+// import { MdSavedSearch } from "react-icons/md";
 import logo from "../assets/mylogo.png";
 
 const Body = () => {
-  const [searchKey, setSearchKey] = useState("fally");
+  const [searchKey, setSearchKey] = useState("Ferre");
   const [artists, setArtists] = useState([]);
   const [token, setToken] = useState("");
 
@@ -17,10 +17,10 @@ const Body = () => {
     if (localToken) setToken(localToken.toString());
   }, []);
 
-  //   const logout = () => {
-  //     setToken("");
-  //     window.localStorage.removeItem("token");
-  // }
+  // const logout = () => {
+  //   setToken("");
+  //   window.localStorage.removeItem("token");
+  // };
 
   const searchArtists = async (e) => {
     e.preventDefault();
@@ -43,14 +43,22 @@ const Body = () => {
       <div key={artist.id}>
         {artist.album.images.length ? (
           <>
-          <iframe style={{borderRadius:"12px"}} src={`https://open.spotify.com/embed/album/${artist.album.id}?utm_source=generator`} width="100%" height="380" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          <img width={"100%"} src={artist.album.images[0].url} alt="" />
+            <iframe
+              style={{ borderRadius: "12px" }}
+              src={`https://open.spotify.com/embed/album/${artist.album.id}?utm_source=generator`}
+              width="100%"
+              height="380"
+              frameBorder="0"
+              allowFullScreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+            <img width={"100%"} src={artist.album.images[0].url} alt="" />
           </>
         ) : (
           <div>No Image</div>
         )}
         {artist.name}
-        {artist.preview_url}
       </div>
     ));
   };
@@ -73,7 +81,7 @@ const Body = () => {
             <button className="btn-search">Search</button>
           </form>
         </div>
-        <div className="sigin">Login</div>
+        {/* <button onClick={logout} className="sigin">Logout</button> */}
       </div>
 
       <div className="main">

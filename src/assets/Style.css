@@ -5,19 +5,20 @@
 .body {
   display: grid;
   grid-template-rows: 0.5fr 4fr 0.5fr;
-  height: 100vh;
+  height: auto;
   background: url(./musik.jpg);
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-size: auto;
+  background-size: cover;
 }
 
 .mybodi {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
 }
 
 .main {
@@ -30,7 +31,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 30px;
   color: white;
   font-weight: bold;
   background: rgba(34, 34, 34, 0.6);
