@@ -1,9 +1,9 @@
-
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react"
 import Body from "./Pages/Body";
-import Connexion from "./Pages/Connexion";
+import Login from "./Pages/Login";
 
-function App() {
+
+const App = () => {
   const [token, setToken] = useState("");
   useEffect(() => {
     const hash = window.location.hash;
@@ -23,7 +23,9 @@ function App() {
 
     setToken(token);
   }, []);
-
-   return <div> {token ? <Body /> : <Connexion />}</div>;
+  return <div className="app"> {token ? <Body /> : <Login />}</div>;
 }
-export default App;
+
+export default App
+
+

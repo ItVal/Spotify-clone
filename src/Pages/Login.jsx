@@ -1,11 +1,11 @@
 import React from "react";
 import "../assets/Style.css";
-import logo from "../assets/mylogo.png"
+import logo from "../assets/mylogo.png";
 
-function Connexion() {
+const Login = () => {
   const handleClick = async () => {
     const client_id = "b730196b4f704762b31ea406c402262a";
-    const redirect_uri = "http://localhost:5173/";
+    const redirect_uri = "http://localhost:5173";
     const api_uri = "https://accounts.spotify.com/authorize";
     const scope = [
       "user-read-private",
@@ -27,6 +27,6 @@ function Connexion() {
       <button onClick={handleClick}>Connect Spotify</button>
     </div>
   );
-}
+};
 
-export default Connexion;
+export default Login;
