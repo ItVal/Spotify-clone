@@ -17,10 +17,10 @@ const Body = () => {
     if (localToken) setToken(localToken.toString());
   }, []);
 
-  // const logout = () => {
-  //   setToken("");
-  //   window.localStorage.removeItem("token");
-  // };
+  const logout = () => {
+    setToken("");
+    window.localStorage.removeItem("token");
+  };
 
   const searchArtists = async (e) => {
     e.preventDefault();
@@ -81,7 +81,7 @@ const Body = () => {
             <button className="btn-search">Search</button>
           </form>
         </div>
-        {/* <button onClick={logout} className="sigin">Logout</button> */}
+        <button onClick={logout} className="sigin">Logout</button>
       </div>
 
       <div className="main">
