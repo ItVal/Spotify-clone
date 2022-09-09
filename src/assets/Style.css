@@ -19,6 +19,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
+ 
+  
 }
 
 .main {
@@ -106,12 +108,13 @@
   height: auto;
   color: white;
   align-items: flex-start;
-  width: 250px;
+  width: 200px;
   background: rgba(34, 34, 34, 0.6);
   backdrop-filter: blur(10px); 
   padding: 25px 30px;
   overflow: hidden;
   transition: all 0.3s ease;
+  
 }
 .side_bar {
   display: flex;
@@ -119,12 +122,14 @@
   gap: 20px;
   margin-top: 40px;
   margin-left: 50px;
+ 
 }
 
 .home {
   display: flex;
   gap: 30px;
 }
+
 .search {
   display: flex;
   gap: 30px;

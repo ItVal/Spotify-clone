@@ -1,28 +1,65 @@
 import React from "react";
 import "../assets/Style.css";
+import { Link } from "react-router-dom";
 
 import { AiOutlineHome } from "react-icons/ai";
-import { FaSearchPlus } from "react-icons/fa"; 
+import { BiLibrary } from "react-icons/bi";
 import { MdOutlineLibraryMusic } from "react-icons/md";
-
+import { FaMicrophoneAlt } from "react-icons/fa";
 
 function Sidebar() {
   return (
     <div className="side_bar">
       <div className="home">
-        <span className="sidebar__home"><AiOutlineHome /> </span> 
-        <span>Home</span>
+        <span className="sidebar__home">
+          <AiOutlineHome />{" "}
+        </span>
+        <Link to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>
+          Home
+        </Link>
       </div>
-      <div className="search">
-        <span className="sidebar__search" > <FaSearchPlus /> </span>
-        <span>Search</span>
+      <div className="sidebar_album">
+        <span className="sidebar__search">
+          {" "}
+          <BiLibrary />{" "}
+        </span>
+        <Link
+          to="/albums"
+          className={(nav) => (nav.isActive ? "nav-active" : "")}
+        >
+          Albums
+        </Link>
       </div>
-      <div className="library">
-        <span className="sidebar__library" src="" alt=""> <MdOutlineLibraryMusic /> </span>
-        <span>Your Library</span>
+      <div className="sidebar__artists">
+        <span className="sidebar__library" src="" alt="">
+          {" "}
+          <FaMicrophoneAlt />{" "}
+        </span>
+        <Link
+          to="/artists"
+          className={(nav) => (nav.isActive ? "nav-active" : "")}
+        >
+          Artists
+        </Link>
+      </div>
+      <div className="sidebar__tracks">
+        <span className="sidebar__library" src="" alt="">
+          {" "}
+          <MdOutlineLibraryMusic />{" "}
+        </span>
+        <Link
+          to="/tracks"
+          className={(nav) => (nav.isActive ? "nav-active" : "")}
+        >
+          Tracks
+        </Link>
       </div>
       <br />
-      <strong className="sidebar__title">PLAYLISTS</strong>
+
+      <strong className="sidebar__title" onClick="">
+        PLAYLISTS
+      </strong>
+
       <hr />
     </div>
   );
