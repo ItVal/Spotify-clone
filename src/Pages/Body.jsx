@@ -9,6 +9,10 @@ import logo from "../assets/mylogo.png";
 import Albums from "./Albums";
 import Artists from "./Artists";
 import Tracks from "./Tracks";
+import { FaSearchPlus } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";   
+import { RiLogoutCircleLine } from "react-icons/ri";
+
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Navbar from "../Components/Navbar";
 // import Navbar from "../Components/Navbar";
@@ -130,14 +134,9 @@ const Body = () => {
       <div className="navbar">
         <img className="sidebar__logo" src={logo} alt="" />
         <div className="navigation">
-          <>
-            <strong className="" onClick="">
-              PLAYLISTS
-            </strong>
             {data?.items
               ? data.items.map((items) => <p>{items.name}</p>)
               : null}
-          </>
           <form onSubmit={searchArtists} className="reseach">
             <input
               className="search-zone"
@@ -145,12 +144,16 @@ const Body = () => {
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
             />
-            <button className="btn-search">Search</button>
+            {/* <button className="btn-search">Search</button> */}
+            <FaSearchPlus className="img-search" onClick={searchArtists}/>
           </form>
         </div>
-        <button onClick={logout} className="sigin">
-          Logout
-        </button>
+        <>
+        <CgProfile className="img-search"/>
+        <RiLogoutCircleLine onClick={logout} className="img-search" />
+         
+        </>
+        
       </div>
 
       <div className="main">

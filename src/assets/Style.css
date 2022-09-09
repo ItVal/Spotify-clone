@@ -6,7 +6,7 @@
   display: grid;
   grid-template-rows: 0.5fr 4fr 0.5fr;
   height: auto;
-  background: url(./musik.jpg);
+  /* background: url(./musik.jpg); */
   position: absolute;
   top: 0;
   left: 0;
@@ -68,11 +68,15 @@
   margin-left: 20px;
   border: solid;
   border-radius: 50px;
+  width: 580px;
 }
 .btn-search {
   border: solid;
   border-radius: 12px;
   width: 80px;
+}
+.img-search{
+  font-size: 30px;
 }
 /* login */
 .login {
@@ -130,11 +134,40 @@
   gap: 30px;
 }
 
-.search {
+.sidebar__home {
   display: flex;
   gap: 30px;
 }
-.library {
+.track,
+.album,
+.artists,
+.home1{
+  color:#1ed15e;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.sidebar__track,
+.sidebar__artist,
+.sidebar__albums,
+.sidebar__home
+{
+  font-size: 30px;
+}
+.nav{
+  color: aliceblue;
+}
+.sidebar__artists {
+  display: flex;
+  gap: 30px;
+  text-decoration: none;
+  color: white;
+}
+.sidebar_album {
+  display: flex;
+  gap: 30px;
+}
+.sidebar__tracks {
   display: flex;
   gap: 30px;
 }
@@ -147,7 +180,7 @@
 
 .sidebar__logo {
   object-fit: contain;
-  width: 170px;
+  width: 200px;
 }
 
 /* footer */

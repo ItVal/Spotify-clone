@@ -3,6 +3,7 @@ import Body from "./Pages/Body";
 import Login from "./Pages/Login";
 import { Buffer } from "buffer";
 import { BrowserRouter } from "react-router-dom";
+import "./App.css";
 
 const App = () => {
   const [token, setToken] = useState("");
@@ -49,11 +50,11 @@ const App = () => {
     setInterval(refeshToken, 10000);
   }, []);
   return (
-    <>
+    <div className="app">
       <BrowserRouter>
         <div className="app"> {token ? <Body /> : <Login />}</div>;
       </BrowserRouter>
-    </>
+    </div>
   );
 };
 

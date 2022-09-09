@@ -15,11 +15,11 @@ function Sidebar() {
           <AiOutlineHome />{" "}
         </span>
         <Link to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>
-          Home
+         <span className="home1">Home</span> 
         </Link>
       </div>
       <div className="sidebar_album">
-        <span className="sidebar__search">
+        <span className="sidebar__albums">
           {" "}
           <BiLibrary />{" "}
         </span>
@@ -27,11 +27,11 @@ function Sidebar() {
           to="/albums"
           className={(nav) => (nav.isActive ? "nav-active" : "")}
         >
-          Albums
+         <span className="album">Albums</span> 
         </Link>
       </div>
       <div className="sidebar__artists">
-        <span className="sidebar__library" src="" alt="">
+        <span className="sidebar__artist" src="" alt="">
           {" "}
           <FaMicrophoneAlt />{" "}
         </span>
@@ -39,11 +39,11 @@ function Sidebar() {
           to="/artists"
           className={(nav) => (nav.isActive ? "nav-active" : "")}
         >
-          Artists
+          <span className="artists">Artists</span> 
         </Link>
       </div>
       <div className="sidebar__tracks">
-        <span className="sidebar__library" src="" alt="">
+        <span className="sidebar__track" src="" alt="">
           {" "}
           <MdOutlineLibraryMusic />{" "}
         </span>
@@ -51,7 +51,7 @@ function Sidebar() {
           to="/tracks"
           className={(nav) => (nav.isActive ? "nav-active" : "")}
         >
-          Tracks
+          <span className="track">Tracks</span> 
         </Link>
       </div>
       <br />
