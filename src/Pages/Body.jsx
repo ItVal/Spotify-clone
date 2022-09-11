@@ -21,7 +21,7 @@ import Sidebar from "../Components/Sidebar";
 import Home from "./Home";
 
 const Body = () => {
-  const [searchKey, setSearchKey] = useState("Ferre");
+  const [searchKey, setSearchKey] = useState("");
   const [artists, setArtists] = useState([]);
   const [token, setToken] = useState("");
   const [data, setData] = useState({});
@@ -58,12 +58,13 @@ const Body = () => {
   };
   console.log(artists);
 
-  // render albums
-  const renderAlbums = () => {
+  // render home
+  const renderSearch = () => {
     return artists.map((albm) => (
       <div key={albm.id}>
         {albm.album.images.length ? (
           <>
+          <img width={"100%"} src={albm.album.images[0].url} alt="" />
             <iframe
               style={{ borderRadius: "22px", height: "200px" }}
               src={`https://open.spotify.com/embed/album/${albm.album.id}?utm_source=generator`}
@@ -74,7 +75,6 @@ const Body = () => {
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
             ></iframe>
-            {/* <img width={"100%"} src={albm.album.images[0].url} alt="" /> */}
           </>
         ) : (
           <div>No Image</div>
@@ -101,6 +101,32 @@ const Body = () => {
                 loading="lazy"
               ></iframe> */}
             <img width={"100%"} src={albm.album.images[0].url} alt="" />
+          </>
+        ) : (
+          <div>No Image</div>
+        )}
+        {albm.name}
+      </div>
+    ));
+  };
+
+  // render albums
+  const renderAlbums = () => {
+    return artists.map((albm) => (
+      <div key={albm.id}>
+        {albm.album.images.length ? (
+          <>
+            <iframe
+              style={{ borderRadius: "22px", height: "200px" }}
+              src={`https://open.spotify.com/embed/album/${albm.album.id}?utm_source=generator`}
+              width="100%"
+              height="380"
+              frameBorder="0"
+              allowFullScreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+            {/* <img width={"100%"} src={albm.album.images[0].url} alt="" /> */}
           </>
         ) : (
           <div>No Image</div>
@@ -140,8 +166,8 @@ const Body = () => {
 
         <div>
           <Routes>
-            <Route path="/" element={<Home renderAlbums={renderAlbums()} />} />
-            <Route path="/albums" element={<Albums />} />
+            <Route path="/" element={<Home renderSearch={renderSearch()} />} />
+            <Route path="/albums" element={<Albums  renderAlbums={renderAlbums()}/>} />
             <Route
               path="/artists"
               element={<Artists renderArtist={renderArtist()} />}

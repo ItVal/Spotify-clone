@@ -8,7 +8,7 @@ const Home = (props) => {
         Les meilleurs Albums du moment.
     </div>
     <div className="myalbum">
- {props.renderAlbums}
+ {props.renderSearch}
     </div>
     </>
   )

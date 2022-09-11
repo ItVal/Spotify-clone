@@ -45,13 +45,15 @@
   font-size: 30px;
   color: white;
   font-weight: bold;
-  background-color: #282424;
+  background: rgba(34, 34, 34, 0.6);
+  backdrop-filter: blur(10px); 
 }
 .artist_title{
   font-size: 30px;
   color: white;
   font-weight: bold;
-  background-color: #282424;
+  background: rgba(34, 34, 34, 0.6);
+  backdrop-filter: blur(10px); 
 }
 .menu3 {
   margin-right: 100px;
@@ -192,9 +194,11 @@
   margin-left: 50px;
 }
 .myfooter {
-  background-color: #282424;
   display: flex;
+  background: rgba(34, 34, 34, 0.6);
+  backdrop-filter: blur(10px); 
 }
+
 .footer__right * .MuiSlider-root {
   color: green;
 }
