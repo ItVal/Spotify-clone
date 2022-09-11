@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Body from "./Pages/Body";
+// import Body from "./Pages/Body";
 import Login from "./Pages/Login";
 import { Buffer } from "buffer";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
+import Body from "./Pages/Body";
 
 const App = () => {
   const [token, setToken] = useState("");
