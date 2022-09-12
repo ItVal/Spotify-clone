@@ -15,6 +15,10 @@
   background-size: cover;
 }
 
+nav:active{
+  background-color : red;
+  color: aqua;
+}
 
 .main {
   display: grid;
@@ -47,8 +51,16 @@
   font-weight: bold;
   background: rgba(34, 34, 34, 0.6);
   backdrop-filter: blur(10px); 
+  margin-left: 0px;
 }
 .artist_title{
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  background: rgba(34, 34, 34, 0.6);
+  backdrop-filter: blur(10px); 
+}
+.album_title{
   font-size: 30px;
   color: white;
   font-weight: bold;
@@ -87,7 +99,7 @@
 /* login */
 .login {
   display: grid;
-  background-color: rgb(39, 33, 33);
+  background: conic-gradient(rgba(88, 73, 32, 0.6), #4bb6ad);
   height: 100vh;
   justify-content: center;
   align-items: center;
@@ -108,6 +120,36 @@
   border: solid;
   box-sizing: border-box;
 }
+.btn-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 100px;
+
+}
+
+.or{
+  border: 2px solid lightgray;
+  border-radius: 50%;
+  padding: 10px;
+  color: gray;
+  background-color: white;
+  font-weight: bold;
+}
+
+.btn-log{
+  width: 260px;
+  height: 40px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: black;
+  
+}
+.login-title{
+  color: #f3bd00;
+  margin-bottom: 100px;
+}
 
 /* side bar */
 .sidebar {
@@ -118,7 +160,7 @@
   height: auto;
   color: white;
   align-items: flex-start;
-  width: 200px;
+  width: 230px;
   background: rgba(34, 34, 34, 0.6);
   backdrop-filter: blur(10px); 
   padding: 25px 30px;

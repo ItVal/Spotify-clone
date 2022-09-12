@@ -25,8 +25,8 @@ const Body = () => {
   const [artists, setArtists] = useState([]);
   const [token, setToken] = useState("");
   const [data, setData] = useState({});
+  const [iframe, setIframe] = useState('')
 
-  const [categori, setcategori] = useState("Ferre");
 
   useEffect(() => {
     const localToken = localStorage.getItem("token");
@@ -63,23 +63,15 @@ const Body = () => {
     return artists.map((albm) => (
       <div key={albm.id}>
         {albm.album.images.length ? (
-          <>
-          <img width={"100%"} src={albm.album.images[0].url} alt="" />
-            <iframe
-              style={{ borderRadius: "22px", height: "200px" }}
-              src={`https://open.spotify.com/embed/album/${albm.album.id}?utm_source=generator`}
-              width="100%"
-              height="380"
-              frameBorder="0"
-              allowFullScreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
-          </>
+          <div className="gesIframe" onClick={() => {setIframe(albm.album.id)}}>
+          <img className="img-track" width={"242"} src={albm.album.images[0].url} alt="" />
+          </div>
         ) : (
           <div>No Image</div>
         )}
+        <div className="nomArttist">
         {albm.name}
+        </div>
       </div>
     ));
   };
@@ -162,9 +154,19 @@ const Body = () => {
       <div className="main">
         <div className="sidebar">
           <Sidebar />
+          <iframe
+              style={{ borderRadius: "22px", height: "200px" }}
+              src={`https://open.spotify.com/embed/album/${iframe}?utm_source=generator`}
+              width="100%"
+              height="380"
+              frameBorder="0"
+              allowFullScreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
         </div>
 
-        <div>
+        <div className="mainDisplay">
           <Routes>
             <Route path="/" element={<Home renderSearch={renderSearch()} />} />
             <Route path="/albums" element={<Albums  renderAlbums={renderAlbums()}/>} />
