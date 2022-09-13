@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import "../assets/Style.css";
 import "../App.css";
 import axios from "axios";
-// import Sidebar from "../Components/Sidebar";
 import Footer from "../Components/Footer";
-// import { MdSavedSearch } from "react-icons/md";
+
 import logo from "../assets/mylogo.png";
 import Albums from "./Albums";
 import Artists from "./Artists";
@@ -37,17 +36,12 @@ const Body = () => {
   };
 
   const searchArtists = async (e) => {
-    // e.preventDefault();
     const { data } = await axios.get(
       `https://api.spotify.com/v1/search?q=${searchKey}&type=track,artist,album,playlist&limit=50`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-        // params: {
-        //   q: searchKey,
-        //   type: "track, album, playlist, artist",
-        // },
       }
     );
 
@@ -74,12 +68,14 @@ const Body = () => {
               src={albm.album.images[0].url}
               alt=""
             />
-           <div className="nomArttist">{albm.name}</div>
+            <div className="nomArttist">{albm.name}</div>
           </div>
         ) : (
-          <div>No Image</div>
+          <>
+            <div>No Image</div>
+            <div className="nomArttist">{albm.name}</div>
+          </>
         )}
-        {/* <div className="nomArttist">{albm.name}</div> */}
       </div>
     ));
   };
@@ -149,7 +145,7 @@ const Body = () => {
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
             />
-            {/* <button className="btn-search">Search</button> */}
+            
             <FaSearchPlus className="img-search" onClick={searchArtists} />
           </form>
         </div>
@@ -163,7 +159,13 @@ const Body = () => {
         <div className="sidebar">
           <Sidebar />
           <iframe
-            style={{ borderRadius: "22px", height: "300px", display: afficheiframe ? 'flex': 'none' }}
+            style={{
+              borderRadius: "22px",
+              position: "sticky",
+              top: "0",
+              height: "300px",
+              display: afficheiframe ? "flex" : "none",
+            }}
             src={`https://open.spotify.com/embed/album/${iframe}?utm_source=generator`}
             width="100%"
             height="380"
@@ -189,7 +191,6 @@ const Body = () => {
           </Routes>
         </div>
       </div>
-
       <div className="myfooter">
         <Footer />
       </div>

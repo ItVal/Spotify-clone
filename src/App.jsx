@@ -8,6 +8,7 @@ import Body from "./Pages/Body";
 
 const App = () => {
   const [token, setToken] = useState("");
+  const [user, setUser] = useState({});
 
   const refeshToken = () => {
     const client_id = "b730196b4f704762b31ea406c402262a";
@@ -53,7 +54,7 @@ const App = () => {
   return (
     <div className="app">
       <BrowserRouter>
-        <div className="app"> {token ? <Body /> : <Login />}</div>;
+        <div className="app"> {user ? <Body /> : <Login user = {user} setUser={setUser}/>}</div>;
       </BrowserRouter>
     </div>
   );

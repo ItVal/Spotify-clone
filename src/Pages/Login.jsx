@@ -5,9 +5,9 @@ import { useCallback } from "react";
 // import GoogleLogin from "react-google-login";
 import jwtDecode from "jwt-decode";
 
-const Login = () => {
-  const [user, setUser] = useState({});
-
+const Login = ({ user, setUser }) => {
+  
+//  login avec spotify
   const handleClick = useCallback(async () => {
     const client_id = "b730196b4f704762b31ea406c402262a";
     const redirect_uri = "http://localhost:5173";
@@ -50,9 +50,11 @@ const Login = () => {
       <img src={logo} alt="lindada logo" />
       <h2 className="login-title">Connect whith</h2>
       <div className="btn-login">
-      <button className="btn-log" onClick={handleClick}>Spotify</button>
-      <div className="or">Or</div>
-      <div  className="btn-log" id="login"></div>
+        <button className="btn-log" onClick={handleClick}>
+          Spotify
+        </button>
+        <div className="or">Or</div>
+        <div className="btn-log" id="login"></div>
       </div>
       {user && (
         <div>

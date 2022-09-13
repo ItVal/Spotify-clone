@@ -24,6 +24,7 @@ nav:active{
   display: grid;
   grid-template-columns: 1fr 4fr;
   color: rgb(41, 94, 94);
+ 
 }
 .navbar {
   display: flex;
@@ -38,6 +39,7 @@ nav:active{
   padding: 25px 30px;
   overflow: hidden;
   transition: all 0.3s ease;
+
 }
 .navigation {
   display: flex;

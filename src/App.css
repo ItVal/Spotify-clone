@@ -48,11 +48,14 @@
   }
   .mainDisplay{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow: auto;
     background: url(./assets/musik.jpg);
     background-repeat: repeat;
     background-size: center/cover;
+
+    overflow-y: scroll;
+    scrollbar-width: thin;
   }
 
   .img-track{
