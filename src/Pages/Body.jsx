@@ -8,15 +8,15 @@ import logo from "../assets/mylogo.png";
 import Albums from "./Albums";
 import Artists from "./Artists";
 import Tracks from "./Tracks";
-import { FaSearchPlus } from "react-icons/fa";
+import { AiOutlineSearch } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
-import { RiLogoutCircleLine } from "react-icons/ri";
+import { FiLogOut } from "react-icons/fi";
 
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Sidebar from "../Components/Sidebar";
 import Home from "./Home";
 
-const Body = ({ user }) => {
+const Body = ({ user, setUser }) => {
   const [searchKey, setSearchKey] = useState("Athoms Mbuma");
   const [artists, setArtists] = useState([]);
   const [token, setToken] = useState("");
@@ -147,13 +147,29 @@ const Body = ({ user }) => {
               onChange={(e) => setSearchKey(e.target.value)}
             />
 
-            <FaSearchPlus className="img-search" onClick={searchArtists} />
+            <AiOutlineSearch className="img-search" onClick={searchArtists} />
           </form>
         </div>
         <>
-          <div>
-            <img src={user.picture} />
-            <h3>{user.name}</h3>
+          <div className="userInfo">
+            <img className="userIcon" src={user.picture} />
+            <h3 className="userName">{user.name}</h3>
+            <p></p>
+            <p></p>
+            <FiLogOut
+              className="userLogout"
+              onClick={() => {
+                setUser("");
+              }}
+            />
+            <h3
+              className="userName"
+              onClick={() => {
+                setUser("");
+              }}
+            >
+              Logout
+            </h3>
           </div>
         </>
       </div>

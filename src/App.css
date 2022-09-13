@@ -76,3 +76,22 @@
     
   }
 
+  .userInfo{
+    display: flex;
+    gap: 10px;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .userIcon,
+  .userLogout{
+    width: 30px;
+    height: 30px;
+    border: 1px;
+    border-radius: 50%;
+  }
+
+  .userName{
+    font-size: 13px;
+  }
+

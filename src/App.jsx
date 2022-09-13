@@ -57,7 +57,7 @@ const App = () => {
       <BrowserRouter>
         <div className="app">
           {" "}
-          {users !== 0 ? <Body user={user} /> : <Login user={user} setUser={setUser} />}
+          {users !== 0 ? <Body user={user} setUser={setUser} /> : <Login user={user} setUser={setUser} />}
         </div>
         ;
       </BrowserRouter>
