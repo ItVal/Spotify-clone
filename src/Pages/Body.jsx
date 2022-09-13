@@ -13,24 +13,22 @@ import { FaSearchPlus } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { RiLogoutCircleLine } from "react-icons/ri";
 
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Navbar from "../Components/Navbar";
-// import Navbar from "../Components/Navbar";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Sidebar from "../Components/Sidebar";
 import Home from "./Home";
 
 const Body = () => {
-  const [searchKey, setSearchKey] = useState("");
+  const [searchKey, setSearchKey] = useState("Athoms Mbuma");
   const [artists, setArtists] = useState([]);
   const [token, setToken] = useState("");
   const [data, setData] = useState({});
-  const [iframe, setIframe] = useState('')
-
+  const [iframe, setIframe] = useState("");
+  const [afficheiframe, setAfficheiframe] = useState(false);
 
   useEffect(() => {
     const localToken = localStorage.getItem("token");
     if (localToken) setToken(localToken.toString());
+    searchArtists();
   }, []);
 
   const logout = () => {
@@ -39,7 +37,7 @@ const Body = () => {
   };
 
   const searchArtists = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const { data } = await axios.get(
       `https://api.spotify.com/v1/search?q=${searchKey}&type=track,artist,album,playlist&limit=50`,
       {
@@ -63,15 +61,25 @@ const Body = () => {
     return artists.map((albm) => (
       <div key={albm.id}>
         {albm.album.images.length ? (
-          <div className="gesIframe" onClick={() => {setIframe(albm.album.id)}}>
-          <img className="img-track" width={"242"} src={albm.album.images[0].url} alt="" />
+          <div
+            className="gesIframe"
+            onClick={() => {
+              setIframe(albm.album.id);
+              setAfficheiframe(true);
+            }}
+          >
+            <img
+              className="img-track"
+              width={"242"}
+              src={albm.album.images[0].url}
+              alt=""
+            />
+           <div className="nomArttist">{albm.name}</div>
           </div>
         ) : (
           <div>No Image</div>
         )}
-        <div className="nomArttist">
-        {albm.name}
-        </div>
+        {/* <div className="nomArttist">{albm.name}</div> */}
       </div>
     ));
   };
@@ -155,21 +163,24 @@ const Body = () => {
         <div className="sidebar">
           <Sidebar />
           <iframe
-              style={{ borderRadius: "22px", height: "200px" }}
-              src={`https://open.spotify.com/embed/album/${iframe}?utm_source=generator`}
-              width="100%"
-              height="380"
-              frameBorder="0"
-              allowFullScreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
+            style={{ borderRadius: "22px", height: "300px", display: afficheiframe ? 'flex': 'none' }}
+            src={`https://open.spotify.com/embed/album/${iframe}?utm_source=generator`}
+            width="100%"
+            height="380"
+            frameBorder="0"
+            allowFullScreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
         </div>
 
         <div className="mainDisplay">
           <Routes>
             <Route path="/" element={<Home renderSearch={renderSearch()} />} />
-            <Route path="/albums" element={<Albums  renderAlbums={renderAlbums()}/>} />
+            <Route
+              path="/albums"
+              element={<Albums renderAlbums={renderAlbums()} />}
+            />
             <Route
               path="/artists"
               element={<Artists renderArtist={renderArtist()} />}

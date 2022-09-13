@@ -54,13 +54,12 @@ function Sidebar() {
           <span className="track">Tracks</span> 
         </Link>
       </div>
-      <br />
 
-      <strong className="sidebar__title" onClick="">
+
+      <spam className="sidebar__title">
         PLAYLISTS
-      </strong>
+      </spam>
 
-      <hr />
     </div>
   );
 }

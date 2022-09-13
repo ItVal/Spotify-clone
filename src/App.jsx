@@ -53,7 +53,7 @@ const App = () => {
   return (
     <div className="app">
       <BrowserRouter>
-        <div className="app"> {<Login />}</div>;
+        <div className="app"> {token ? <Body /> : <Login />}</div>;
       </BrowserRouter>
     </div>
   );

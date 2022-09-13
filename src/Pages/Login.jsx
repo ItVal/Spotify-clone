@@ -47,7 +47,7 @@ const Login = () => {
 
   return (
     <div className="login">
-      <img src={logo} alt="spotify" />
+      <img src={logo} alt="lindada logo" />
       <h2 className="login-title">Connect whith</h2>
       <div className="btn-login">
       <button className="btn-log" onClick={handleClick}>Spotify</button>
