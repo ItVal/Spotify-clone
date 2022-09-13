@@ -45,23 +45,19 @@ const Login = ({ user, setUser }) => {
     });
   }, []);
 
+  
   return (
     <div className="login">
       <img src={logo} alt="lindada logo" />
       <h2 className="login-title">Connect whith</h2>
       <div className="btn-login">
-        <button className="btn-log" onClick={handleClick}>
+        {/* <button className="btn-log" onClick={handleClick}>
           Spotify
-        </button>
+        </button> */}
         <div className="or">Or</div>
         <div className="btn-log" id="login"></div>
       </div>
-      {user && (
-        <div>
-          <img src={user.picture} />
-          <h3>{user.name}</h3>
-        </div>
-      )}
+      
     </div>
   );
 };

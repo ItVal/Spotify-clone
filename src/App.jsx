@@ -51,10 +51,15 @@ const App = () => {
     setToken(token);
     setInterval(refeshToken, 10000);
   }, []);
+  let users = Object.keys(user).length;
   return (
     <div className="app">
       <BrowserRouter>
-        <div className="app"> {user ? <Body /> : <Login user = {user} setUser={setUser}/>}</div>;
+        <div className="app">
+          {" "}
+          {users !== 0 ? <Body user={user} /> : <Login user={user} setUser={setUser} />}
+        </div>
+        ;
       </BrowserRouter>
     </div>
   );

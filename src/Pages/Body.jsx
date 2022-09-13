@@ -16,7 +16,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Sidebar from "../Components/Sidebar";
 import Home from "./Home";
 
-const Body = () => {
+const Body = ({ user }) => {
   const [searchKey, setSearchKey] = useState("Athoms Mbuma");
   const [artists, setArtists] = useState([]);
   const [token, setToken] = useState("");
@@ -28,7 +28,7 @@ const Body = () => {
     const localToken = localStorage.getItem("token");
     if (localToken) setToken(localToken.toString());
     searchArtists();
-  }, []);
+  }, [artists]);
 
   const logout = () => {
     setToken("");
@@ -36,6 +36,7 @@ const Body = () => {
   };
 
   const searchArtists = async (e) => {
+    // e.preventDefault();
     const { data } = await axios.get(
       `https://api.spotify.com/v1/search?q=${searchKey}&type=track,artist,album,playlist&limit=50`,
       {
@@ -145,13 +146,15 @@ const Body = () => {
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
             />
-            
+
             <FaSearchPlus className="img-search" onClick={searchArtists} />
           </form>
         </div>
         <>
-          <CgProfile className="img-search" />
-          <RiLogoutCircleLine onClick={logout} className="img-search" />
+          <div>
+            <img src={user.picture} />
+            <h3>{user.name}</h3>
+          </div>
         </>
       </div>
 
