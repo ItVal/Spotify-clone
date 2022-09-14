@@ -10,7 +10,7 @@ const Login = ({ user, setUser }) => {
 //  login avec spotify
   const handleClick = useCallback(async () => {
     const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-    const redirect_uri = "http://localhost:5173";
+    const redirect_uri = import.meta.env.VITE_SPOTIFY_REDIRECT_URL;
     const api_uri = "https://accounts.spotify.com/authorize";
     const scope = [
       "user-read-private",
