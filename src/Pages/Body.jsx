@@ -139,7 +139,7 @@ const Body = ({ user, setUser }) => {
         <img className="sidebar__logo" src={logo} alt="" />
         <div className="navigation">
           {data?.items ? data.items.map((items) => <p>{items.name}</p>) : null}
-          <form onSubmit={searchArtists} className="reseach">
+          <form onSubmit={searchArtists} className="reseach" id="reseach">
             <input
               className="search-zone"
               placeholder="Search for Artists, Songs, or Podcasts "
@@ -152,18 +152,20 @@ const Body = ({ user, setUser }) => {
         </div>
         <>
           <div className="userInfo">
-            <img className="userIcon" src={user.picture} />
-            <h3 className="userName">{user.name}</h3>
-            <p></p>
-            <p></p>
+            <img id="userIcon" className="userIcon" src={user.picture} />
+            <h3 className="userName" id="userName">{user.name}</h3>
+            <p id="userName"></p>
+            <p id="userName"></p>
             <FiLogOut
               className="userLogout"
+              id="userLogout"
               onClick={() => {
                 setUser("");
               }}
             />
             <h3
               className="userName"
+              id="userName"
               onClick={() => {
                 setUser("");
               }}
@@ -175,15 +177,20 @@ const Body = ({ user, setUser }) => {
       </div>
 
       <div className="main">
-        <div className="sidebar">
+        <div className="sidebar" id="sidebar">
           <Sidebar />
+          <span className="sidebar__title" id="sidebar__title">
+        PLAY
+      </span>
           <iframe
+          id="iframe"
             style={{
               borderRadius: "22px",
               position: "sticky",
               top: "0",
               height: "300px",
               display: afficheiframe ? "flex" : "none",
+              
             }}
             src={`https://open.spotify.com/embed/album/${iframe}?utm_source=generator`}
             width="100%"
@@ -196,6 +203,7 @@ const Body = ({ user, setUser }) => {
         </div>
 
         <div className="mainDisplay">
+      
           <Routes>
             <Route path="/" element={<Home renderSearch={renderSearch()} />} />
             <Route

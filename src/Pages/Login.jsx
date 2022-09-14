@@ -9,7 +9,7 @@ const Login = ({ user, setUser }) => {
   
 //  login avec spotify
   const handleClick = useCallback(async () => {
-    const client_id = "b730196b4f704762b31ea406c402262a";
+    const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
     const redirect_uri = "http://localhost:5173";
     const api_uri = "https://accounts.spotify.com/authorize";
     const scope = [
@@ -34,8 +34,7 @@ const Login = ({ user, setUser }) => {
 
   useEffect(() => {
     google.accounts.id.initialize({
-      client_id:
-        "674625790645-9npplupeai2iiof0gsebhks6rrubq48v.apps.googleusercontent.com",
+      client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
       callback: handleCallback,
     });
 
@@ -53,8 +52,8 @@ const Login = ({ user, setUser }) => {
       <div className="btn-login">
         {/* <button className="btn-log" onClick={handleClick}>
           Spotify
-        </button> */}
-        <div className="or">Or</div>
+        </button> 
+        <div className="or">Or</div>*/}
         <div className="btn-log" id="login"></div>
       </div>
       

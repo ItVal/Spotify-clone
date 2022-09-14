@@ -1,13 +1,14 @@
 import React from 'react'
 import "../assets/Style.css";
+import "../App.css";
 
 const Home = (props) => {
   return (
     <>
-    <div className="home_title">
+    <div className="home_title" id='home_title'>
         Les meilleurs Sons du moment avec Lindada Musik.
     </div>
-    <div className="myalbum">
+    <div className="myalbum" id="myalbum">
  {props.renderSearch}
     </div>
     </>

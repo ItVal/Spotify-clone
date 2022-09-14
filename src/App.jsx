@@ -11,8 +11,8 @@ const App = () => {
   const [user, setUser] = useState({});
 
   const refeshToken = () => {
-    const client_id = "b730196b4f704762b31ea406c402262a";
-    const client_secret = "dbbe0176ecbf4264a1f6e589ba55960c";
+    const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+    const client_secret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
     const client_id_secret = Buffer.from(client_id + ":" + client_secret);
     const url = "https://accounts.spotify.com/api/token";
     const options = {

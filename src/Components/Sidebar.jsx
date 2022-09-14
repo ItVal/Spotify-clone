@@ -9,7 +9,7 @@ import { FaMicrophoneAlt } from "react-icons/fa";
 
 function Sidebar() {
   return (
-    <div className="side_bar">
+    <div className="side_bar" id="side_bar">
       <div className="home">
         <span className="sidebar__home">
           <AiOutlineHome />{" "}
@@ -56,9 +56,7 @@ function Sidebar() {
       </div>
 
 
-      <span className="sidebar__title">
-        PLAYLISTS
-      </span>
+     
 
     </div>
   );
