@@ -59,7 +59,6 @@ const App = () => {
           {" "}
           {users !== 0 ? <Body user={user} setUser={setUser} /> : <Login user={user} setUser={setUser} />}
         </div>
-        ;
       </BrowserRouter>
     </div>
   );

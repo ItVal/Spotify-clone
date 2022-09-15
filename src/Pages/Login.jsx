@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../assets/Style.css";
 import logo from "../assets/mylogo.png";
+import loginlogo from "../assets/login_streaming.jpg";
 import { useCallback } from "react";
 import jwtDecode from "jwt-decode";
 
 const Login = ({ user, setUser }) => {
-  
-//  login avec spotify
+  //  login avec spotify
   const handleClick = useCallback(async () => {
     const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
     const redirect_uri = import.meta.env.VITE_SPOTIFY_REDIRECT_URL;
@@ -43,19 +43,26 @@ const Login = ({ user, setUser }) => {
     });
   }, []);
 
-  
   return (
     <div className="login">
-      <img src={logo} alt="lindada logo" />
-      <h2 className="login-title">Connect whith</h2>
-      <div className="btn-login">
-        {/* <button className="btn-log" onClick={handleClick}>
+      <div className="gauche">
+        <img src={logo} alt="lindada logo" className=""/>
+        <h1 className="login-title1">Music To</h1>
+        <h1 className="login-title">Fill Your Heart</h1>
+        <div className="btn-log" id="login"></div>
+        {/*  <div className="btn-login">
+          
+         <button className="btn-log" onClick={handleClick}>
           Spotify
         </button> 
-        <div className="or">Or</div>*/}
-        <div className="btn-log" id="login"></div>
+        <div className="or">Or</div>
+          
+        </div>*/}
       </div>
-      
+
+      <div className="droite">
+        <img src={loginlogo} alt="loginlogo" />
+      </div>
     </div>
   );
 };
