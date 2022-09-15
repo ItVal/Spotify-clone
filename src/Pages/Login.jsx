@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "../assets/Style.css";
 import logo from "../assets/mylogo.png";
 import { useCallback } from "react";
-// import GoogleLogin from "react-google-login";
 import jwtDecode from "jwt-decode";
 
 const Login = ({ user, setUser }) => {
