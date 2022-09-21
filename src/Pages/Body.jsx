@@ -28,7 +28,7 @@ const Body = ({ user, setUser }) => {
     const localToken = localStorage.getItem("token");
     if (localToken) setToken(localToken.toString());
     searchArtists();
-  }, [artists]);
+  }, []);
 
   const logout = () => {
     setToken("");
@@ -86,19 +86,9 @@ const Body = ({ user, setUser }) => {
     return artists.map((albm) => (
       <div key={albm.id}>
         {albm.album.images.length ? (
-          <>
-            {/* <iframe
-                style={{ borderRadius: "22px", height: "200px" }}
-                src={`https://open.spotify.com/embed/album/${albm.album.id}?utm_source=generator`}
-                width="100%"
-                height="380"
-                frameBorder="0"
-                allowFullScreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-              ></iframe> */}
+          
             <img width={"100%"} src={albm.album.images[0].url} alt="" />
-          </>
+          
         ) : (
           <div>No Image</div>
         )}
@@ -139,7 +129,7 @@ const Body = ({ user, setUser }) => {
         <img className="sidebar__logo" src={logo} alt="" />
         <div className="navigation">
           {data?.items ? data.items.map((items) => <p>{items.name}</p>) : null}
-          <form onSubmit={searchArtists} className="reseach" id="reseach">
+          <form onChange={searchArtists} className="reseach" id="reseach">
             <input
               className="search-zone"
               placeholder="Search for Artists, Songs, or Podcasts "
@@ -153,7 +143,9 @@ const Body = ({ user, setUser }) => {
         <>
           <div className="userInfo">
             <img id="userIcon" className="userIcon" src={user.picture} />
-            <h3 className="userName" id="userName">{user.name}</h3>
+            <h3 className="userName" id="userName">
+              {user.name}
+            </h3>
             <p id="userName"></p>
             <p id="userName"></p>
             <FiLogOut
@@ -180,17 +172,16 @@ const Body = ({ user, setUser }) => {
         <div className="sidebar" id="sidebar">
           <Sidebar />
           <span className="sidebar__title" id="sidebar__title">
-        PLAY
-      </span>
+            PLAY
+          </span>
           <iframe
-          id="iframe"
+            id="iframe"
             style={{
               borderRadius: "22px",
               position: "sticky",
               top: "0",
               height: "300px",
               display: afficheiframe ? "flex" : "none",
-              
             }}
             src={`https://open.spotify.com/embed/album/${iframe}?utm_source=generator`}
             width="100%"
@@ -203,7 +194,6 @@ const Body = ({ user, setUser }) => {
         </div>
 
         <div className="mainDisplay">
-      
           <Routes>
             <Route path="/" element={<Home renderSearch={renderSearch()} />} />
             <Route
