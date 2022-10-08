@@ -6,7 +6,7 @@ const Home = (props) => {
   return (
     <>
     <div className="home_title" id='home_title'>
-        Les meilleurs Sons du moment avec Lindada Musik.
+        Les meilleurs Sons du moment avec Valify Musik.
     </div>
     <div className="myalbum" id="myalbum">
  {props.renderSearch}

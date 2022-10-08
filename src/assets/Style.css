@@ -24,6 +24,9 @@ nav:active{
   color: rgb(41, 94, 94);
  
 }
+.home_title{
+  text-align: center;
+}
 .navbar {
   display: flex;
   flex-direction: row;
@@ -510,10 +513,69 @@ nav:active{
   
 }
 
-
-
+/* login */
 .login {
-  background-color: blueviolet;
+  display: flex;
+  flex-direction: column-reverse;
+  
+  background: #b194c4;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+  overflow: hidden;
+}
+.gauche{
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: #b194c4;
+  margin-left: 0px;
+  
+}
+.login-title1{
+  margin-top: 70px;
+}
+.gauche img{
+  
+  width: 150px;
+  height: 70px;
+  align-items: center;
+  margin-bottom: 0px;
+  margin-top: 40px;
+  
+}
+.btn-log{
+  width: 260px;
+  height: 40px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: black;
+  
+}
+.login-title{
+  color: #f3bd00;
+  margin-bottom: 70px;
+}
+
+
+.droite img{
+  width: 200px;
+  height: 220px;
+  align-items: center;
+  transform: rotate(20deg);
+  
+}
+.droite{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #ebf1f0;
 }
 
 .body {
@@ -593,30 +655,7 @@ nav:active{
 .img-search{
   font-size: 30px;
 }
-/* login */
-.login {
-  display: grid;
-  background: conic-gradient(rgba(88, 73, 32, 0.6), #4bb6ad);
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  place-items: center;
-}
 
-.login > img {
-  height: 300px;
-}
-
-.login > button {
-  color: white;
-  width: 200px;
-  height: 50px;
-  border-radius: 99px;
-  font-weight: 800;
-  background-color: #1db954;
-  border: solid;
-  box-sizing: border-box;
-}
 .btn-login{
   display: flex;
   justify-content: center;
@@ -625,30 +664,6 @@ nav:active{
   margin-bottom: 100px;
 
 }
-
-.or{
-  border: 2px solid lightgray;
-  border-radius: 50%;
-  padding: 10px;
-  color: gray;
-  background-color: white;
-  font-weight: bold;
-}
-
-.btn-log{
-  width: 260px;
-  height: 40px;
-  border-radius: 5px;
-  box-sizing: border-box;
-  color: black;
-  
-}
-.login-title{
-  color: #f3bd00;
-  margin-bottom: 100px;
-}
-
-
 
 /* footer */
 .footer {
@@ -716,3 +731,4 @@ nav:active{
 
 
 }
+/* by ValNas */
